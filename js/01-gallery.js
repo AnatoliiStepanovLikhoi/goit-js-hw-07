@@ -46,7 +46,10 @@ function onPictureClick(event) {
 
     modalRef = basicLightbox.create(`
     <img src="${onTargetClick.dataset.source}" 
-    alt="${onTargetClick.alt}">`)
+    alt="${onTargetClick.alt}">`, {
+        // closable: false,
+        onClose: (modalRef) => { listenerRemove() },
+    })
     
     modalRef.show();
     
