@@ -11,7 +11,7 @@ const galleryMarkup = createGalleryItems(galleryItems);
 
 galleryDivRef.insertAdjacentHTML('beforeend', galleryMarkup);
 
-galleryDivRef.addEventListener('click', onPictureClick)
+galleryDivRef.addEventListener('click', onPictureClick);
 
 // console.log(galleryDivRef);
 
@@ -34,7 +34,7 @@ function createGalleryItems(items) {
 
 function onPictureClick(event) {
     // console.log(event.target)
-    event.preventDefault()
+    event.preventDefault();
 
     const onTargetClick = event.target;
 
@@ -58,13 +58,14 @@ function onPictureClick(event) {
 
 function onEscapeClose(event) {
     if (event.code !== 'Escape') {
-        return
+        return;
     }
 
-    modalRef.close(listenerRemove)
+    modalRef.close();
 }
 
 function listenerRemove() {
+    console.log('listenerRemove');
     window.removeEventListener('keydown', onEscapeClose);
 }
 
